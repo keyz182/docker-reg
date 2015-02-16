@@ -31,7 +31,7 @@ done
 JSON="{$JSON }"
 echo $JSON
 
-CTL="etcdctl -C http://${ETCD_PORT_10000_TCP_ADDR}:${ETCD_PORT_10000_TCP_PORT}"
+CTL="etcdctl -C http://172.17.42.1:4001"
 
 KEY="/services/${SERV}/${MACH}"
 trap "$CTL rm $KEY; exit" SIGHUP SIGINT SIGTERM
